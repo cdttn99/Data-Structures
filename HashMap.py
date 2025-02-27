@@ -4,11 +4,6 @@ from a6_include import (DynamicArray, DynamicArrayException, HashEntry,
 
 class HashMap:
     def __init__(self, capacity: int, function) -> None:
-        """
-        Initialize new HashMap that uses
-        quadratic probing for collision resolution
-        DO NOT CHANGE THIS METHOD IN ANY WAY
-        """
         self._buckets = DynamicArray()
 
         # capacity must be a prime number
@@ -20,20 +15,12 @@ class HashMap:
         self._size = 0
 
     def __str__(self) -> str:
-        """
-        Override string method to provide more readable output
-        DO NOT CHANGE THIS METHOD IN ANY WAY
-        """
         out = ''
         for i in range(self._buckets.length()):
             out += str(i) + ': ' + str(self._buckets[i]) + '\n'
         return out
 
     def _next_prime(self, capacity: int) -> int:
-        """
-        Increment from given number to find the closest prime number
-        DO NOT CHANGE THIS METHOD IN ANY WAY
-        """
         if capacity % 2 == 0:
             capacity += 1
 
@@ -44,10 +31,6 @@ class HashMap:
 
     @staticmethod
     def _is_prime(capacity: int) -> bool:
-        """
-        Determine if given integer is a prime number and return boolean
-        DO NOT CHANGE THIS METHOD IN ANY WAY
-        """
         if capacity == 2 or capacity == 3:
             return True
 
@@ -63,17 +46,9 @@ class HashMap:
         return True
 
     def get_size(self) -> int:
-        """
-        Return size of map
-        DO NOT CHANGE THIS METHOD IN ANY WAY
-        """
         return self._size
 
     def get_capacity(self) -> int:
-        """
-        Return capacity of map
-        DO NOT CHANGE THIS METHOD IN ANY WAY
-        """
         return self._capacity
 
     # ------------------------------------------------------------------ #
